@@ -6,15 +6,9 @@
 #                                               #
 #################################################
 
-# Minor updates to DIAL
-# rm /etc/asterisk/firsttime
-cd /etc/asterisk/
-wget https://github.com/N4IRS/AllStar/raw/master/configs/dnsmgr.conf
-# wget https://github.com/N4IRS/AllStar/raw/master/configs/modules.conf
-
 # Checkout DMRlink and put it in /opt
 cd /srv
-git clone https://github.com/N4IRS/DMRlink
+git clone https://github.com/n0mjs710/DMRlink.git
 cd /srv/DMRlink/
 ./mk_dmrlink
 
@@ -22,9 +16,11 @@ cd /srv/DMRlink/
 cd /srv
 systemctl stop getty@ttyAMA0.service
 systemctl disable getty@ttyAMA0.service
-apt-get install -y sudo
+cp config.txt /boot
+cp cmdline.txt /boot
 
 # Setup WiringPi
+apt-get install -y sudo
 git clone git://git.drogon.net/wiringPi
 cd wiringPi/
 ./build
@@ -48,8 +44,6 @@ cd /srv
 git clone https://github.com/N4IRS/DMRGateway.git
 cd DMRGateway/
 ./install.sh
-cp config.txt /boot
-cp cmdline.txt /boot
 
 # reboot
 
