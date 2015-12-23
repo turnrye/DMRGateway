@@ -20,13 +20,14 @@ cp config.txt /boot
 cp cmdline.txt /boot
 
 # Setup WiringPi
+cd /srv
 apt-get install -y sudo
 git clone git://git.drogon.net/wiringPi
 cd wiringPi/
 ./build
-cd ..
 
 # Setup AMBEserverGPIO
+cd /srv
 git clone https://github.com/dl5di/OpenDV.git
 mv OpenDV/DummyRepeater/DV3000 DV3000
 rm -rf OpenDV
