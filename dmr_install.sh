@@ -6,6 +6,8 @@
 #                                               #
 #################################################
 
+apt-get update
+
 # Checkout DMRlink and put it in /opt
 cd /srv
 git clone https://github.com/n0mjs710/DMRlink.git
@@ -14,6 +16,8 @@ cd /srv/DMRlink/
 
 # setup boot for DV3000
 cd /srv
+git clone https://github.com/N4IRS/DMRGateway.git
+cd /srv/DMRGateway/
 systemctl stop getty@ttyAMA0.service
 systemctl disable getty@ttyAMA0.service
 cp config.txt /boot
@@ -41,9 +45,7 @@ cd /etc/init.d
 update-rc.d AMBEserverGPIO start 50 2 3 4 5
 
 # Setup DMRGateway
-cd /srv
-git clone https://github.com/N4IRS/DMRGateway.git
-cd DMRGateway/
+cd /srv/DMRGateway/
 ./install.sh
 
 # reboot
