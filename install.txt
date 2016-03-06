@@ -1,4 +1,5 @@
 To install DMRlink for DMRGateway
+apt-get update && apt-get install unzip
 cd /srv
 git clone git clone https://github.com/n0mjs710/DMRlink.git
 cd DMRlink
