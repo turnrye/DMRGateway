@@ -2,8 +2,10 @@
 
 apt-get update
 apt-get install git portaudio19-dev sudo -y
+ln -sf /srv/DMRGateway/DMRlink /srv/
 
-/srv/DMRGateway/DMRlink/mk_dmrlink
+cd /srv/DMRlink && ./mk_dmrlink
+cd -
 
 # setup boot for DV3000
 systemctl stop getty@ttyAMA0.service
@@ -25,5 +27,5 @@ cd /etc/init.d
 update-rc.d AMBEserverGPIO start 50 2 3 4 5
 
 
-ln -s /srv/DMRGateway/DMRGateway /usr/local/bin
+ln -sf /srv/DMRGateway/DMRGateway /usr/local/bin
 cp /srv/DMRGateway/DMRGateway.ini /etc
