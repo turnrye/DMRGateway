@@ -4,3 +4,6 @@
 [submodule "DMRlink"]
 	path = DMRlink
 	url = https://github.com/n0mjs710/DMRlink.git
+[submodule "wiringPi"]
+	path = wiringPi
+	url = git://git.drogon.net/wiringPi
