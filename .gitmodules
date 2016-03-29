@@ -1,0 +1,6 @@
+[submodule "OpenDV"]
+	path = OpenDV
+	url = https://github.com/dl5di/OpenDV.git
+[submodule "DMRlink"]
+	path = DMRlink
+	url = https://github.com/n0mjs710/DMRlink.git
