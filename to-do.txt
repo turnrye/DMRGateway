@@ -1,4 +1,19 @@
 * update /boot/cmdline.txt to not have ttyAMA0 crap, something like dwc_otg.lpm_enable=0 console=tty1 root=/dev/mmcblk0p2 rootwait net.ifnames=1 ipv6.disable=1
 * make /boot/config.txt have init_uart_clock=50000000
 * Add script to start DMRGateway and dmrlink's ambe_audio
-* update asterisk to have the usrp enabled
+* update asterisk to have the usrp enabled as described:
+setup for USRP is:
+
+edit /etc/asterisk/modules change:
+load => chan_simpleusb.so ;            Simple USB Radio Interface Channel Drive          
+to:
+noload => chan_simpleusb.so
+
+noload => chan_usrp.so ;            USRP Channel Module            
+to:
+load => chan_usrp.so
+
+edit /etc/asterisk/rpt.conf change:
+rxchannel = SimpleUSB/usb        ; Rx audio/signalling channel
+to:
+rxchannel = usrp/127.0.0.1:34001:32001
