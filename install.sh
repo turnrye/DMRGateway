@@ -3,6 +3,7 @@
 apt-get update
 apt-get install git portaudio19-dev python-pip sudo -y
 pip install bitstring
+pip install rpi.gpio
 ln -sf /srv/DMRGateway/DMRlink /srv/
 mkdir /var/log/dmrlink/
 cd /srv/DMRlink && ./mk_dmrlink
