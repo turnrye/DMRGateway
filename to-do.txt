@@ -1,3 +1,4 @@
 * update /boot/cmdline.txt to not have ttyAMA0 crap, something like dwc_otg.lpm_enable=0 console=tty1 root=/dev/mmcblk0p2 rootwait net.ifnames=1 ipv6.disable=1
 * make /boot/config.txt have init_uart_clock=50000000
 * Add script to start DMRGateway and dmrlink's ambe_audio
+* update asterisk to have the usrp enabled
